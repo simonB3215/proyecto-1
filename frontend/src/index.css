@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #e32636;
+  --color-accent: #d4af37;
+  --color-background: var(--bg);
+  --color-backgroundCard: var(--bg-card);
+  --color-textMain: var(--text-main);
+  --color-textMuted: var(--text-muted);
+  --color-white: var(--theme-white);
+  --color-black: var(--theme-black);
+}
+
+:root {
+  --bg: #111111;
+  --bg-card: #1a1a1a;
+  --text-main: #f8fafc;
+  --text-muted: #b4aa96;
+  --theme-white: #ffffff;
+  --theme-black: #000000;
+}
+
+:root.light {
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #111111;
+  --text-muted: #64748b;
+  --theme-white: #111111;
+  --theme-black: #ffffff;
+}
+
+body {
+  @apply bg-background text-textMain antialiased;
+}
+
+.glass {
+  @apply bg-backgroundCard/80 backdrop-blur-xl border border-white/10;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+.hover-lift {
+  @apply transition-transform hover:-translate-y-1;
+}
